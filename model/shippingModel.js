@@ -12,7 +12,7 @@ var Shipping = {
         return db.query(`insert into ${shippingTable} set ? `, data, callback);
     },
     updateShipping: function(data, conditions, callback){
-        return db.query(`insert into ${shippingTable} set ? WHERE ? `, [data, conditions], callback);
+        return db.query(`update ${shippingTable} set ? WHERE ? `, [data,conditions], callback);
     }
 };
 

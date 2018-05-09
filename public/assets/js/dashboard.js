@@ -124,6 +124,16 @@ function formatDate(date) {
     return day + '/' + monthNames[monthIndex] + '/' + year;
 }
 
+function saveFormatDate(date) {
+    var monthNames = [01,02,03,04,05,06,07,08,09,10,11,12];
+
+    var day = date.getDate();
+    var monthIndex = date.getMonth();
+    var year = date.getFullYear();
+
+    return year + '-' + monthNames[monthIndex] + '-' + day;
+}
+
 function updateDateRangeForFilter(fromDate, toDate) {
     var fromMonth = (fromDate.getMonth() + 1) < 10 ? '0' + (fromDate.getMonth() + 1) : (fromDate.getMonth() + 1);
     var toMonth = (toDate.getMonth() + 1) < 10 ? '0' + (toDate.getMonth() + 1) : (toDate.getMonth() + 1);
@@ -196,6 +206,8 @@ $(function () {
 function openModel(Id){
     $.ajax(`get-shipping/${Id}`)
     .done(function(data){
+        var etd = saveFormatDate(new Date(data.etd));
+        var nhs = saveFormatDate(new Date(data.nhs));
         $('#addShippingForm').attr('action','/dashboard/update-shipping');
         $('#cnee').val(data.cnee);
         $('#line').val(data.line);
@@ -207,8 +219,8 @@ function openModel(Id){
         $('#weight').val(data.weight);
         $('#vol').val(data.vol);
         $('#hbl').val(data.hbl);
-        $('#etd').val(data.etd);
-        $('#nhs').val(data.nhs);
+        $('#etd').val(etd);
+        $('#nhs').val(nhs);
         $('#shipper').val(data.shipper);
         $('#mb_l').val(data.mb_l);
         $('#agent').val(data.agent);

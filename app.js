@@ -12,6 +12,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 /************Body Parser */
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
+// parse application/json
+app.use(bodyParser.json());
 /********************** */
 
 /***************SESSION ************/
@@ -75,7 +77,9 @@ app.get('/', function(req, res){ // Default redirecting to login page
 //Load routes
 var userRouter = require('./router/userRouter');
 var dashboardRouter = require('./router/dashboardRouter');
+var apiRouter = require('./router/api');
 // Use routes
+app.use('/api', apiRouter);
 app.use('/user', userRouter);
 app.use('/dashboard', dashboardRouter);
 /*******ROUTING ENDS HERE */
