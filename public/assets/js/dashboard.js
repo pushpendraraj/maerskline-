@@ -42,7 +42,7 @@ if ($('#JobsGrid').length > 0) {
                 className: 'btn btn-default',
                 orientation: 'landscape',
                 exportOptions: {
-                    columns: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+                    columns: [1,2,3,4,5,6,7,8,9,10]
                 },
                 customize: function(doc) {
                     doc.styles = {
@@ -85,7 +85,7 @@ if ($('#JobsGrid').length > 0) {
                 text: '<i class="fa fa-file-excel-o" aria-hidden="true"></i> Excel',
                 className: 'btn btn-default',
                 exportOptions: {
-                    columns: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+                    columns: [1,2,3,4,5,6,7,8,9,10]
                 }
             },
             // 'colvis'

@@ -5,6 +5,20 @@ var app = express();
 var config = require('./config');
 app.locals.configuration = config;
 
+cors = require('cors');
+var originsWhitelist = [
+    'http://localhost:4200',      //this is my front-end url for development
+  ];
+  var corsOptions = {
+    origin: function(origin, callback){
+          var isWhitelisted = originsWhitelist.indexOf(origin) !== -1;
+          callback(null, isWhitelisted);
+    },
+    credentials:true
+  }
+  //here is the magic
+app.use(cors(corsOptions));
+
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 // app.use(express.static(path.join(__dirname, 'public')));
