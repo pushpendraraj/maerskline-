@@ -149,6 +149,11 @@ function updateDateRangeForFilter(fromDate, toDate) {
 }
 
 $(function () {
+    let obj = new Date();
+    let day = obj.getDate();
+    let month = obj.getMonth();
+    let year = obj.getFullYear();
+    updateDateRangeForFilter(new Date(year, month-6, day), new Date(year, month+6, day));
     $(document).on('click', '.dropdown-menu, .day', function (event) {
         event.stopPropagation();
     });
@@ -167,8 +172,6 @@ $(function () {
             }
         });
         
-    $('#today').addClass('active');
-    updateDateRangeForFilter(new Date(), new Date());
     $('#tab a').click(function (e) {
         e.preventDefault();
         $('#custom_datepicker .date .form-control').val("");
@@ -178,13 +181,6 @@ $(function () {
             var selectedId = $(this).attr('id');
             var currentDate = new Date();
             var fromDate = new Date();
-            if (selectedId == 'today') {
-                fromDate.getPastDate(0);
-            } else if (selectedId == 'week') {
-                fromDate.getPastDate(7);
-            } else if (selectedId == 'month') {
-                fromDate.getPastDate(30);
-            }
             updateDateRangeForFilter(fromDate, currentDate);
 
         } else {

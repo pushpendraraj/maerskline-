@@ -7,23 +7,13 @@
                     <input type="hidden" name="min" id="minDate">
                     <input type="hidden" name="min" id="maxDate">
                 </div>
-                <div class="dropdown-menu" style="padding:10px;width:430px;" id="pickerContainer">
-                    <div id="tab" class="btn-group" >
-                        <a href="#day" class="btn btn-default fixed_date" data-toggle="tab" role="tab" id="today">Today</a>
-                        <a href="#aweek" class="btn btn-default fixed_date" data-toggle="tab" role="tab" id="week">1 Week</a>
-                        <a href="#amonth" class="btn btn-default fixed_date" data-toggle="tab" role="tab" id="month">1 Month</a>
-                        <a href="#custom_datepicker" class="btn btn-default" data-toggle="tab" role="tab" id="custom_option" >Custom Date Range</a>
-                    </div>
-
+                <div class="dropdown-menu" style="padding:10px;width:100%;" id="pickerContainer">
                     <div class="tab-content">
-                        <div class="tab-pane" id="day"></div>
-                        <div class="tab-pane" id="aweek"></div>
-                        <div class="tab-pane" id="amonth"></div>
-                        <div class="tab-pane" id="custom_datepicker">
+                        <div class="tab-pane active" id="custom_datepicker">
                             <br>
                                 <div class="form-group">
                                     <label for="exampleInputEmail2">Date Range :</label>
-                                    <div class="col-md-7 input-group input-append date" id="datePicker">
+                                    <div class="col-md-12 input-group input-append date" id="datePicker">
                                         <input readonly type="text" class="form-control" name="date_from" id="date_from">
                                         <span class="input-group-addon add-on">
                                             <span class="glyphicon glyphicon-calendar text-danger"></span>
@@ -32,7 +22,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail2">To</label>
-                                    <div class="col-md-7 input-group input-append date" id="datePicker1">
+                                    <div class="col-md-12 input-group input-append date" id="datePicker1">
                                         <input readonly type="text" class="form-control" name="date_to" id="date_to">
                                         <span class="input-group-addon add-on">
                                             <span class="glyphicon glyphicon-calendar text-danger"></span>

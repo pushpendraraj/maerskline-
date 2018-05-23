@@ -120,7 +120,7 @@ a:hover {text-decoration:none;}
 .input-daterange{width: 270px;}
 .input-daterange .form-control {width: 115px;}
 .date_range_filter{ padding: 0 5px;}
-.selected-date-range{width: 270px;}
+.selected-date-range{width: 100%;}
 .dataTables_empty{
     text-align: center;
     color: #a94442;
